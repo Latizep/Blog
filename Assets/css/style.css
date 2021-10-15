@@ -329,27 +329,39 @@ li::marker {
     height: 16px;
 }
 
-.bg{
+.bg {
     background-position: center !important;
     background-size: cover !important;
 }
-.bg-title{
+
+.bg-title {
     height: 420px;
     width: 100%;
 }
-#detail{
+
+#detail {
     background-color: #000;
 }
-#detail div.title{
-  width: 1080px;
-  height: 70px;        
-  margin-top: -40px;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
+
+#detail div.title {
+    width: 1080px;
+    height: 70px;
+    margin-top: -40px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
-.img-detail img{
-  width: 440px;
-  height: 260px;
+
+.img-detail img {
+    width: 440px;
+    height: 260px;
+}
+
+#detail .comment {
+    padding: 25px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
 }
