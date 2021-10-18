@@ -136,13 +136,7 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     document.getElementById('description').innerHTML = marked(`<?= $blog->description ?>`);
-  </script>
-  <script>
-    let url = document.URL;
-    let dataUrl = url.split('?search=')
-    let dataUrl2 = dataUrl[1].split('#')
-    window.history.pushState("", "", dataUrl[0] + "#" + dataUrl2[1]);
-  </script>
+  </script>  
   <?php
   if (@$_SESSION['email'] != null) {
   ?>
@@ -208,8 +202,8 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
           <form method="post" action="<?= base_url('dash/updateUser') ?>">
             <div class="modal-body">
               <div class="mb-3">
-                <label for="title" class="col-form-label">Email</label>
-                <input type="email" required class="form-control" id="title" name="email" value="<?= @$_SESSION['email'] ?>">
+                <label for="titlee" class="col-form-label">Email</label>
+                <input type="email" required class="form-control" id="titlee" name="email" value="<?= @$_SESSION['email'] ?>">
               </div>
               <div class="mb-3">
                 <label for="title" class="col-form-label">Password</label>
@@ -237,16 +231,16 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
               <div class="row">
                 <div class="mb-3 col-6">
                   <label for="bg" class="col-form-label">Link background :</label>
-                  <input type="text" required class="form-control" id="bg" name="bg" value="<?= $blog->bg ?>">
+                  <input type="text" required class="form-control" id="bg2" name="bg" value="<?= $blog->bg ?>">
                 </div>
                 <div class="mb-3 col-6">
                   <label for="secbg" class="col-form-label">Link another image :</label>
-                  <input type="text" required class="form-control" id="secbg" name="secbg" value="<?= $blog->secbg ?>">
+                  <input type="text" required class="form-control" id="secbg2" name="secbg" value="<?= $blog->secbg ?>">
                 </div>
               </div>
               <div class="mb-3">
                 <label for="title" class="col-form-label">Title :</label>
-                <input type="text" pattern="[A-Z a-z0-9]+" required class="form-control" id="title" name="title" value="<?= $blog->title ?>">
+                <input type="text" pattern="[A-Z a-z0-9]+" required class="form-control" id="title2" name="title" value="<?= $blog->title ?>">
               </div>
               <div class="mb-3">
                 <label for="description" class="col-form-label">Description:</label>
@@ -254,7 +248,7 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
               </div>
               <div class="mb-3">
                 <label for="category" class="form-label">Categoty</label>
-                <input class="form-control" required list="datalistOptions" id="category" name="category" placeholder="Type to search..." value="<?= $blog->category ?>">
+                <input class="form-control" required list="datalistOptions" id="category2" name="category" placeholder="Type to search..." value="<?= $blog->category ?>">
                 <datalist id="datalistOptions">
                   <?php
                   foreach ($category as $r) {
@@ -293,12 +287,12 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
                 </div>
               </div>
               <div class="mb-3">
-                <label for="title" class="col-form-label">Title :</label>
-                <input type="text" required class="form-control" id="title" name="title">
+                <label for="title3" class="col-form-label">Title :</label>
+                <input type="text" required class="form-control" id="title3" name="title">
               </div>
               <div class="mb-3">
                 <label for="description" class="col-form-label">Description:</label>
-                <textarea class="form-control" id="input-description" name="description"></textarea>
+                <textarea class="form-control" id="input-description2" name="description"></textarea>
               </div>
               <div class="mb-3">
                 <label for="category" class="form-label">Categoty</label>
@@ -324,6 +318,9 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
     <script>
       var simplemde = new SimpleMDE({
         element: document.getElementById("input-description")
+      });
+      var simplemde2 = new SimpleMDE({
+        element: document.getElementById("input-description2")
       });
       let url = document.URL;
       let dataUrl = url.split('?response=')

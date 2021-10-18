@@ -153,8 +153,12 @@
   <script>
     let url = document.URL;
     let dataUrl = url.split('?search=')
-    let dataUrl2 = dataUrl[1].split('#')
-    window.history.pushState("", "", dataUrl[0] + "#" + dataUrl2[1]);
+    if(dataUrl.length > 1){
+      let dataUrl2 = dataUrl[1].split('#')
+      window.history.pushState("", "", dataUrl[0] + "#" + dataUrl2[1]);
+    }else{
+      window.history.pushState("", "", dataUrl[0]);
+    }    
   </script>
   <?php
   if (@$_SESSION['email'] != null) {
@@ -269,10 +273,9 @@
     <script>
       var simplemde = new SimpleMDE({
         element: document.getElementById("description")
-      });
-      let url = document.URL;
-      let dataUrl = url.split('?response=')
-      window.history.pushState("", "", dataUrl[0]);
+      });      
+      let dataUrle = url.split('?response=')
+      window.history.pushState("", "", dataUrle[0]);
     </script>
   <?php
   }else{}
