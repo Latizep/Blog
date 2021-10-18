@@ -157,7 +157,7 @@
     window.history.pushState("", "", dataUrl[0] + "#" + dataUrl2[1]);
   </script>
   <?php
-  if ($_SESSION['email'] != null) {
+  if (@$_SESSION['email'] != null) {
   ?>
     <!-- admin-menu -->
     <section class="position-fixed admin-menu">
@@ -202,7 +202,7 @@
             <div class="modal-body">
               <div class="mb-3">
                 <label for="title" class="col-form-label">Email</label>
-                <input type="email" required class="form-control" id="title" name="email" value="<?= $_SESSION['email'] ?>">
+                <input type="email" required class="form-control" id="title" name="email" value="<?= @$_SESSION['email'] ?>">
               </div>
               <div class="mb-3">
                 <label for="title" class="col-form-label">Password</label>
@@ -275,7 +275,7 @@
       window.history.pushState("", "", dataUrl[0]);
     </script>
   <?php
-  }
+  }else{}
   ?>
 </body>
 

@@ -68,7 +68,7 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
           <a class="pe-2 text-light"><i class="fa fa-square"></i> <?= $blog->category ?></a>
         </p>
         <?php
-        if ($_SESSION['email'] != null) {
+        if (@$_SESSION['email'] != null) {
         ?>
           <div class="dropdown dropstart">
             <button class="btn btn-outline-light" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -144,7 +144,7 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
     window.history.pushState("", "", dataUrl[0] + "#" + dataUrl2[1]);
   </script>
   <?php
-  if ($_SESSION['email'] != null) {
+  if (@$_SESSION['email'] != null) {
   ?>
     <!-- admin-menu -->
     <section class="position-fixed admin-menu">
@@ -209,7 +209,7 @@ $title = strtolower(join('-', explode(" ", $blog->title)));
             <div class="modal-body">
               <div class="mb-3">
                 <label for="title" class="col-form-label">Email</label>
-                <input type="email" required class="form-control" id="title" name="email" value="<?= $_SESSION['email'] ?>">
+                <input type="email" required class="form-control" id="title" name="email" value="<?= @$_SESSION['email'] ?>">
               </div>
               <div class="mb-3">
                 <label for="title" class="col-form-label">Password</label>
