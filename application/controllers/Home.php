@@ -8,8 +8,9 @@ class Home extends CI_Controller {
 		$search= @$_GET['search'];
 		if($search == null){
 			$this->load->view('pages/home',$this->getBlog("all"));
-		}
-		$this->load->view('pages/home',$this->getBlog($search));		
+		}else{
+			$this->load->view('pages/home',$this->getBlog($search));		
+		}		
 	}
 
 	private function getBlog($title)
